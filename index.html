@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deutscher Tipp-Test</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Deutscher Tipp-Test</h1>
+      <div id="mascot"></div>
+      <div id="difficulty-buttons">
+        <button id="anfänger-btn">Einfach</button>
+        <button id="fortgeschritten-btn">Mittel</button>
+        <button id="experte-btn">Schwer</button>
+      </div>
+      <select id="test-duration">
+        <option value="60">1 Minute</option>
+        <option value="120">2 Minuten</option>
+        <option value="300">5 Minuten</option>
+        <option value="600">10 Minuten</option>
+      </select>
+      <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+      <div id="timer">60</div>
+      <div id="text-display"></div>
+      <textarea
+        id="input-area"
+        rows="2"
+        placeholder="Tippen Sie hier..."
+      ></textarea>
+      <div id="results">
+        <p>Geschwindigkeit: <span id="speed">0</span> WPM</p>
+        <p>Genauigkeit: <span id="accuracy">100</span>%</p>
+      </div>
+      <button id="start-btn">Test starten</button>
+      <div id="high-scores"></div>
+      <div id="statistics"></div>
+      <div id="level-info">
+        <p>Level: <span id="current-level">1</span></p>
+        <p>
+          XP: <span id="current-xp">0</span> /
+          <span id="xp-to-next-level">100</span>
+        </p>
+      </div>
+      <div id="stars-display"></div>
+    </div>
+    <button id="dark-mode-toggle">Dunkelmodus</button>
+    <script src="script.js"></script>
+  </body>
+</html>

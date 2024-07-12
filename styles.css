@@ -1,0 +1,289 @@
+/* Basis-Stile für das gesamte Dokument */
+body {
+  /* Schriftart für den gesamten Text */
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* Flexbox zur Zentrierung von Inhalten */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Vollbildhöhe */
+  height: 110vh;
+  /* Abstand und Polsterung */
+  margin: 2px;
+  padding: 20px;
+  /* Box-Sizing Regel, damit Padding nicht zur Gesamtbreite hinzugefügt wird */
+  box-sizing: border-box;
+  /* Übergang für weiche Hintergrund- und Farbwechsel */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Stile für die Container-Box */
+.container {
+  /* Hintergrundfarbe */
+  background-color: rgb(40, 155, 231);
+  /* Polsterung innen */
+  padding: 20px;
+  /* Abgerundete Ecken */
+  border-radius: 10px;
+  /* Schattenwurf */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Zentrierter Text */
+  text-align: center;
+  /* Maximale Breite des Containers */
+  max-width: 900px;
+  /* Volle Breite des Containers */
+  width: 100%;
+  /* Übergang für weiche Hintergrund- und Farbwechsel */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Schaltfläche für den Dunkelmodus-Umschalter */
+#dark-mode-toggle {
+  /* Positionierung oben rechts */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  /* Z-Index für Vordergrunddarstellung */
+  z-index: 1000;
+}
+
+h1 {
+  margin-top: 2px;
+}
+
+/* Container für die Schwierigkeitsgrad-Schaltflächen */
+#difficulty-buttons {
+  /* Abstand nach unten */
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* Stile für verschiedene Schaltflächen */
+#difficulty-buttons button,
+#start-btn,
+#test-duration,
+#dark-mode-toggle {
+  /* Rand um die Schaltflächen */
+  margin: 0 15px;
+  /* Polsterung innen */
+  padding: 5px 15px;
+  /* Schriftgröße */
+  font-size: 14px;
+  /* Cursor beim Überfahren */
+  cursor: pointer;
+}
+
+.difficulty-anfänger .word,
+.difficulty-fortgeschritten .word {
+  margin-right: 2px; /* Verringerter Abstand für Anfänger und Fortgeschrittene */
+}
+
+.difficulty-experte .word {
+  margin-right: 2px; /* Normaler Abstand für Experten */
+}
+/* Stil für den Timer */
+#timer {
+  /* Schriftgröße und Fettgewicht */
+  font-size: 24px;
+  font-weight: bold;
+  /* Abstand nach unten */
+  margin-bottom: 10px;
+}
+
+/* Textanzeige, wo die Wörter zum Tippen angezeigt werden */
+#text-display {
+  /* Schriftgröße und Fettgewicht */
+  font-size: 25px;
+  /* Abstand nach unten */
+  margin-bottom: 20px;
+  /* Mindesthöhe der Textanzeige */
+  min-height: 50px;
+  /* Text linksbündig */
+  text-align: left;
+  /* Zeilenhöhe für Lesbarkeit */
+  line-height: 2;
+  /* Horizontale Scroll-Leiste bei Bedarf */
+  overflow-x: auto;
+  /* Verhindert Zeilenumbruch */
+  white-space: nowrap;
+}
+
+/* Eingabefeld für die Texteingabe */
+#input-area {
+  /* Schriftart passend zum restlichen Text */
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* Volle Breite */
+  width: 70%;
+  /* Höhe des Eingabefeldes */
+  height: 50px;
+  /* Polsterung innen */
+  padding: 10px;
+  /* Schriftgröße */
+  font-size: 24px;
+  /* Abstand nach unten */
+  margin-bottom: 20px;
+  /* Box-Sizing Regel */
+  box-sizing: border-box;
+  /* Hintergrundfarbe */
+  background-color: white;
+}
+
+/* Stile für Ergebnis-, Highscore-, Statistik- und Level-Info-Bereiche */
+#results,
+#high-scores,
+#statistics,
+#level-info {
+  /* Abstand nach oben */
+  margin-top: 16px;
+}
+
+/* Stile für einzelne Wörter in der Textanzeige */
+.word {
+  /* Flex-Eigenschaft verhindert Schrumpfen und Wachsen */
+  flex: 0 0 auto;
+  /* Zentrierter Text */
+  text-align: center;
+  /* Abstand zwischen den Wörtern */
+  margin-right: 5px;
+  /* Verhindert Zeilenumbruch innerhalb des Wortes */
+  white-space: nowrap;
+  /* Polsterung innen */
+  padding: 2px 4px;
+  /* Abgerundete Ecken */
+  border-radius: 3px;
+  /* Übergangseffekt für Hintergrundfarbe und Transformation */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Stile für die Zeilen in der Textanzeige */
+.word-row {
+  /* Flexbox zur gleichmäßigen Verteilung der Wörter */
+  display: flex;
+  justify-content: center;
+  /* Abstand nach unten */
+  margin-bottom: 4px;
+  /* Verhindert Zeilenumbruch */
+  flex-wrap: nowrap;
+}
+
+/* Stil für das aktuell getippte Wort */
+.word.current {
+  /* Hintergrundfarbe grünlich */
+  background-color: #90ee90;
+  /* Leichte Vergrößerung zur Hervorhebung */
+  transform: scale(1.05);
+}
+
+/* Stil für falsch getippte Wörter */
+.word.error {
+  /* Hintergrundfarbe rötlich */
+  background-color: #ffb6c1;
+}
+
+/* Stil für korrekt getippte Wörter */
+.word.correct {
+  /* Hintergrundfarbe grau */
+  background-color: #e0e0e0;
+}
+
+/* Abtrennungen zwischen Zeilen */
+.row-separator {
+  /* Höhe der Abtrennung */
+  height: 20px;
+}
+
+/* Stile für einzelne Zeichen */
+.char {
+  /* Inline-Block-Anzeige */
+  display: inline-block;
+  /* Übergangseffekt für Farbe */
+  transition: color 0.3s;
+}
+
+/* Stil für korrekt getippte Zeichen */
+.char.correct {
+  /* Schriftfarbe grünlich */
+  color: rgb(251, 253, 252);
+}
+
+/* Stil für falsch getippte Zeichen */
+.char.incorrect {
+  /* Schriftfarbe rot */
+  color: rgb(255, 0, 0);
+}
+
+/* Container für die Fortschrittsanzeige */
+#progress-bar-container {
+  /* Volle Breite */
+  width: 100%;
+  /* Höhe der Fortschrittsanzeige */
+  height: 10px;
+  /* Hintergrundfarbe hellgrau */
+  background-color: #f0f0f0;
+  /* Abgerundete Ecken */
+  border-radius: 5px;
+  /* Abstand nach oben und unten */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Fortschrittsanzeige selbst */
+#progress-bar {
+  /* Anfangsbreite null */
+  width: 0;
+  /* Volle Höhe */
+  height: 100%;
+  /* Hintergrundfarbe grün */
+  background-color: #63ff68;
+  /* Abgerundete Ecken */
+  border-radius: 5px;
+  /* Übergangseffekt für die Breitenänderung */
+  transition: width 0.5s;
+}
+
+/* Stile für den Dunkelmodus */
+body.dark-mode {
+  /* Hintergrundfarbe dunkel */
+  background-color: #333;
+  /* Schriftfarbe weiß */
+  color: #fff;
+}
+
+/* Stile für den Container im Dunkelmodus */
+body.dark-mode .container {
+  /* Hintergrundfarbe dunkelgrau */
+  background-color: #444;
+  /* Schriftfarbe weiß */
+  color: #fff;
+}
+
+/* Stile für das Eingabefeld im Dunkelmodus */
+body.dark-mode #input-area {
+  /* Hintergrundfarbe dunkler */
+  background-color: #555;
+  /* Schriftfarbe weiß */
+  color: #fff;
+}
+
+/* Medienabfragen für kleine Bildschirme */
+@media (max-width: 600px) {
+  /* Anpassungen für den Container */
+  .container {
+    /* Weniger Polsterung */
+    padding: 10px;
+  }
+
+  /* Anpassungen für die Textanzeige */
+  #text-display {
+    /* Kleinere Schriftgröße */
+    font-size: 16px;
+  }
+
+  /* Anpassungen für das Eingabefeld */
+  #input-area {
+    /* Kleinere Schriftgröße */
+    font-size: 14px;
+  }
+}
